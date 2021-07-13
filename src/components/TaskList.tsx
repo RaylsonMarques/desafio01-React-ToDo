@@ -20,8 +20,7 @@ export function TaskList() {
       throw new Error('Title is required');
     }
 
-    tasks.push({ id: Math.random(), title: newTaskTitle, isComplete: false });
-
+    setTasks([...tasks, { id: Math.random(), title: newTaskTitle, isComplete: false }]);
     setNewTaskTitle('');
 
     setTasks(tasks);
