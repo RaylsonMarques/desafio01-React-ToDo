@@ -17,7 +17,8 @@ export function TaskList() {
   function handleCreateNewTask() {
     // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
     if (!newTaskTitle) {
-      throw new Error('Title is required');
+      console.error('Title is required');
+      return;
     }
 
     setTasks([...tasks, { id: Math.random(), title: newTaskTitle, isComplete: false }]);
